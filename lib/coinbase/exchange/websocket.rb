@@ -112,7 +112,7 @@ module Coinbase
       end
 
       def ws_error(event)
-        fail WebsocketError, event.data
+        fail WebsocketError, event.message
       end
     end
   end
