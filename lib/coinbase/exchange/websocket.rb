@@ -45,7 +45,7 @@ module Coinbase
 
       def subscribe!(options = {})
         product = options[:product_id] || @product
-        @socket.send({ type: 'subscribe', product_ids: product }.to_json)
+        @socket.send({ type: 'subscribe', product_ids: product, channels: ['full', 'heartbeat'] }.to_json)
       end
 
       def ping(options = {})
